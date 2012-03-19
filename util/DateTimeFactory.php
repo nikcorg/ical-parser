@@ -1,5 +1,5 @@
 <?php
-namespace ical\event;
+namespace ical\util;
 
 class DateTimeFactory
 {
