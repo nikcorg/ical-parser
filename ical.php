@@ -7,4 +7,4 @@ include ICAL_BASEDIR . '/parser/Chunk.php';
 include ICAL_BASEDIR . '/Calendar.php';
 include ICAL_BASEDIR . '/Event.php';
 include ICAL_BASEDIR . '/event/Rrule.php';
-include ICAL_BASEDIR . '/event/DateTimeFactory.php';
+include ICAL_BASEDIR . '/util/DateTimeFactory.php';
