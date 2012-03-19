@@ -120,30 +120,30 @@ class Event
 
                 case "DTSTART":
                     if ($line->getParam("VALUE") === "DATE") {
-                        $this->setProperty("dtstart", \ical\event\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
+                        $this->setProperty("dtstart", \ical\util\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
                     } else {
-                        $this->setProperty("dtstart", \ical\event\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
+                        $this->setProperty("dtstart", \ical\util\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
                     }
                     break;
 
                 case "DTEND":
                     if ($line->getParam("VALUE") === "DATE") {
-                        $this->setProperty("dtend", \ical\event\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
+                        $this->setProperty("dtend", \ical\util\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
                     } else {
-                        $this->setProperty("dtend", \ical\event\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
+                        $this->setProperty("dtend", \ical\util\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
                     }
                     break;
 
                 case "CREATED":
-                    $this->setProperty("created", \ical\event\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
+                    $this->setProperty("created", \ical\util\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
                     break;
 
                 case "LAST-MODIFIED":
-                    $this->setProperty("lastModified", \ical\event\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
+                    $this->setProperty("lastModified", \ical\util\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
                     break;
 
                 case "DTSTAMP":
-                    $this->setProperty("dtstamp", \ical\event\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
+                    $this->setProperty("dtstamp", \ical\util\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
                     break;
 
                 case "RRULE":
@@ -152,7 +152,7 @@ class Event
 
                 case "EXDATE":
                     foreach (explode(",", $line->value) as $date) {
-                        $this->addException(\ical\event\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
+                        $this->addException(\ical\util\DateTimeFactory::createFromRow($line, self::$defaultTimezone));
                     }
                     break;
 
