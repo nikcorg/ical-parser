@@ -44,7 +44,7 @@ class Rrule
 
             switch ($name) {
                 case 'UNTIL':
-                    $this->until = new Ical_DateTime($value);
+                    //$this->until = \ical\util\DateTimeFactory::createFromRow($row);
                     break;
 
                 case 'FREQ':
@@ -60,7 +60,7 @@ class Rrule
                     break;
 
                 case 'WKST':
-                    $this->wkst = $value;
+                    $this->wkst = $this->translateWeekday($value);
                     break;
 
                 case 'BYSECOND':
